@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSubtitleCreator.Desktop", "VideoSubtitleCreator.Desktop\VideoSubtitleCreator.Desktop.csproj", "{D766669E-7BD6-4469-9F2B-D4D64328BE8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BFF1EFA1-8374-4726-A07F-A675B3F6AB39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSubtitleCreator.Logic.Test", "..\..\Tests\VideoSubtitleCreator.Logic.Test\VideoSubtitleCreator.Logic.Test.csproj", "{7B35D83E-A0CE-4F86-A66B-BED368A3612E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSubtitleCreator.Logic", "VideoSubtitleCreator.Logic\VideoSubtitleCreator.Logic.csproj", "{9DBFE5AF-115C-4C10-B514-2D0F1B68EFEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D766669E-7BD6-4469-9F2B-D4D64328BE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D766669E-7BD6-4469-9F2B-D4D64328BE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D766669E-7BD6-4469-9F2B-D4D64328BE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D766669E-7BD6-4469-9F2B-D4D64328BE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B35D83E-A0CE-4F86-A66B-BED368A3612E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B35D83E-A0CE-4F86-A66B-BED368A3612E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B35D83E-A0CE-4F86-A66B-BED368A3612E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B35D83E-A0CE-4F86-A66B-BED368A3612E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBFE5AF-115C-4C10-B514-2D0F1B68EFEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBFE5AF-115C-4C10-B514-2D0F1B68EFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBFE5AF-115C-4C10-B514-2D0F1B68EFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBFE5AF-115C-4C10-B514-2D0F1B68EFEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B35D83E-A0CE-4F86-A66B-BED368A3612E} = {BFF1EFA1-8374-4726-A07F-A675B3F6AB39}
+	EndGlobalSection
+EndGlobal

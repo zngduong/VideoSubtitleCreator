@@ -14,7 +14,7 @@ namespace VideoSubtitleCreator.Logic.Model
         public int TrackNumber { get; set; }
         public int Time { get; set; }
         public DateTime Release { get; set; }
-        public List<Subtitle> Subtitles { get; set; }
+        public IList<Subtitle> Subtitles { get; set; }
         public int NoteId { get; set; }
         public Uri Location { get; set; }
     }

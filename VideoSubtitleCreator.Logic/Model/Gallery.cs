@@ -12,9 +12,9 @@ namespace VideoSubtitleCreator.Logic.Model
 
         public string Title { get; set; }
 
-        public List<string> Tag { get; set; }
+        public IList<string> Tag { get; set; }
 
-        public List<Chapter> Chapters { get; set; }
+        public IList<Chapter> Chapters { get; set; }
 
         public string Language { get; set; }
         public string Author { get; set; }
@@ -22,6 +22,6 @@ namespace VideoSubtitleCreator.Logic.Model
 
         public Uri ImageUri { get; set; }
 
-        public List<Video> Videos { get; set; }
+        public IList<Video> Videos { get; set; }
     }
 }

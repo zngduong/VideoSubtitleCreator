@@ -13,10 +13,10 @@ namespace VideoSubtitleCreator.Logic.Repositories
     {
         #region fields
         private string pathLibrary;
-        
+        private string libraryFile = "AppLibrary";
         #endregion fields
 
-        #region consstructor
+        #region constructor
         public LibraryFolder()
         {
             pathLibrary = DirAppData;
@@ -60,9 +60,13 @@ namespace VideoSubtitleCreator.Logic.Repositories
 
         public List<Gallery> GetData()
         {
+            string LibraryFileName = string.Empty;
             try
             {
-                using (StreamReader r = new StreamReader(pathLibrary))
+                LibraryFileName = System.IO.Path.Combine(this.DirAppData, this.libraryFile);
+
+
+                using (StreamReader r = new StreamReader(LibraryFileName))
                 {
                     string json = r.ReadToEnd();
                     var result = JsonConvert.DeserializeObject<List<Gallery>>(json);
@@ -83,24 +87,35 @@ namespace VideoSubtitleCreator.Logic.Repositories
 
         public void SaveData(List<Gallery> content)
         {
-
-            if (!File.Exists(pathLibrary))
+            string LibraryFileName = string.Empty;
+            try
             {
-                using (FileStream f = File.Create(pathLibrary)) { }
+                LibraryFileName = System.IO.Path.Combine(this.DirAppData, this.libraryFile);
+                if (!File.Exists(LibraryFileName))
+                {
+                    using (FileStream f = File.Create(LibraryFileName)) { }
 
+                }
+                using (FileStream fs = File.Open(LibraryFileName, FileMode.OpenOrCreate))
+                using (StreamWriter sw = new StreamWriter(fs))
+                using (JsonWriter jw = new JsonTextWriter(sw))
+                {
+                    jw.Formatting = Formatting.Indented;
+
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(jw, content);
+                }
             }
-            using (FileStream fs = File.Open(pathLibrary, FileMode.OpenOrCreate))
-            using (StreamWriter sw = new StreamWriter(fs))
-            using (JsonWriter jw = new JsonTextWriter(sw))
+            catch (Exception)
             {
-                jw.Formatting = Formatting.Indented;
-
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(jw, content);
+                
+                throw;
             }
+            
 
         }
         #endregion read library
         
+
     }
 }

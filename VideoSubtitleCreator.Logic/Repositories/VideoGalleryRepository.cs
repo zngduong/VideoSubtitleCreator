@@ -67,7 +67,10 @@ namespace VideoSubtitleCreator.Logic.Repositories
             }
         }
 
-
+        /// <summary>
+        /// Thêm gallery vào library
+        /// </summary>
+        /// <param name="gallery"></param>
         public void AddGallery(Gallery gallery)
         {
             Check.Require(gallery.Title);
@@ -77,7 +80,7 @@ namespace VideoSubtitleCreator.Logic.Repositories
             //{
 
             //}
-            gallery.Id = _galleries.Count;
+            gallery.Id = _galleries.Count > 0 ? _galleries.Max(x => x.Id) + 1 : 1;
             _galleries.Add(gallery);
             _library.SaveData(_galleries);
         }
@@ -95,7 +98,9 @@ namespace VideoSubtitleCreator.Logic.Repositories
 
         public void DeleteGallery(int galleryId)
         {
-            _galleries.RemoveAll(g => g.Id == galleryId);
+            var gallery = _galleries.FirstOrDefault(c => c.Id == galleryId);
+            _galleries.Remove(gallery);
+            //_galleries.ForEach((g) => { if (g.Id > galleryId) g.Id = g.Id - 1; });
             _library.SaveData(_galleries);
         }
 
@@ -113,6 +118,7 @@ namespace VideoSubtitleCreator.Logic.Repositories
         #endregion Gallery
 
         #region Video
+
         public Video GetInfoVideo(string pathFile)
         {
 
@@ -128,10 +134,43 @@ namespace VideoSubtitleCreator.Logic.Repositories
             return video;
         }
 
-        public void AddVideo(Video video, Gallery gallery)
+        /// <summary>
+        /// Thêm list Video vào gallery
+        /// </summary>
+        /// <param name="video"></param>
+        /// <param name="gallery"></param>
+        public void AddVideos(List<Video> videos, int galleryId)
         {
-
+            _galleries = (_galleries.Select(g =>
+                {
+                    if (g.Id == galleryId)
+                    {
+                        foreach (Video v in videos)
+                        {
+                            v.Id = g.Videos.Count > 0 ? g.Videos.Max(x => x.Id) + 1 : 1;
+                            g.Videos.Add(v);
+                        }
+                        return g;
+                    }
+                    else return g;
+                })).ToList();
+            _library.SaveData(_galleries);
         }
+
+        //public void Remove(List<int> videosId, int galleryId)
+        //{
+        //    _galleries = (_galleries.Select(g =>
+        //        {
+        //            if (g.Id == galleryId)
+        //            {
+        //                g.Videos.RemoveAll(v => videosId.Contains(v.Id));
+        //                return g;
+        //            }
+        //            else return g;
+        //        })).ToList();
+        //    _library.SaveData(_galleries);
+        //}
+
 
         #endregion Video
         static class Check

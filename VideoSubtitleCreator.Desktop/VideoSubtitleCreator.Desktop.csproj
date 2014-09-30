@@ -94,10 +94,14 @@
     <Compile Include="Interfaces\IViewModelResolver.cs" />
     <Compile Include="ViewModel\AvalonDockLayoutViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\GalleryItemViewModel.cs" />
+    <Compile Include="ViewModel\GalleryViewModel.cs" />
     <Compile Include="ViewModel\Notifications.cs" />
     <Compile Include="ViewModel\PaneViewModel.cs" />
+    <Compile Include="ViewModel\VideoItemViewModel.cs" />
+    <Compile Include="ViewModel\VideoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\Workspace.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -140,6 +144,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VideoSubtitleCreator.Logic\VideoSubtitleCreator.Logic.csproj">
+      <Project>{9dbfe5af-115c-4c10-b514-2d0f1b68efeb}</Project>
+      <Name>VideoSubtitleCreator.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

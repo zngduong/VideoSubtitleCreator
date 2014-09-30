@@ -42,14 +42,14 @@ namespace VideoSubtitleCreator.Desktop.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
 
-            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<Workspace>();
         }
 
-        public MainViewModel Main
+        public Workspace Main
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
+                return ServiceLocator.Current.GetInstance<Workspace>();
             }
         }
         

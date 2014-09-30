@@ -104,17 +104,17 @@ namespace VideoSubtitleCreator.Logic.Repositories
             _library.SaveData(_galleries);
         }
 
-        public void CreateDefaultGallery()
-        {
-            Gallery g = new Gallery
-            {
-                Id = 0,
-                Title = "My Gallery",
-                Author = "User",
-                Description = "My Gallery"
-            };
-            this.AddGallery(g);
-        }
+        //public void CreateDefaultGallery()
+        //{
+        //    Gallery g = new Gallery
+        //    {
+        //        Id = 0,
+        //        Title = "My Gallery",
+        //        Author = "User",
+        //        Description = "My Gallery"
+        //    };
+        //    this.AddGallery(g);
+        //}
         #endregion Gallery
 
         #region Video
@@ -139,23 +139,23 @@ namespace VideoSubtitleCreator.Logic.Repositories
         /// </summary>
         /// <param name="video"></param>
         /// <param name="gallery"></param>
-        public void AddVideos(List<Video> videos, int galleryId)
-        {
-            _galleries = (_galleries.Select(g =>
-                {
-                    if (g.Id == galleryId)
-                    {
-                        foreach (Video v in videos)
-                        {
-                            v.Id = g.Videos.Count > 0 ? g.Videos.Max(x => x.Id) + 1 : 1;
-                            g.Videos.Add(v);
-                        }
-                        return g;
-                    }
-                    else return g;
-                })).ToList();
-            _library.SaveData(_galleries);
-        }
+        //public void AddVideos(List<Video> videos, int galleryId)
+        //{
+        //    _galleries = (_galleries.Select(g =>
+        //        {
+        //            if (g.Id == galleryId)
+        //            {
+        //                foreach (Video v in videos)
+        //                {
+        //                    v.Id = g.Videos.Count > 0 ? g.Videos.Max(x => x.Id) + 1 : 1;
+        //                    g.Videos.Add(v);
+        //                }
+        //                return g;
+        //            }
+        //            else return g;
+        //        })).ToList();
+        //    _library.SaveData(_galleries);
+        //}
 
         //public void Remove(List<int> videosId, int galleryId)
         //{

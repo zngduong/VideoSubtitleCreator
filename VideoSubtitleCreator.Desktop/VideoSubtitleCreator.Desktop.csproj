@@ -90,7 +90,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Interfaces\ILayoutViewModelParent.cs" />
+    <Compile Include="Interfaces\IViewModelResolver.cs" />
+    <Compile Include="ViewModel\AvalonDockLayoutViewModel.cs" />
+    <Compile Include="ViewModel\Base\ViewViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\Notifications.cs" />
+    <Compile Include="ViewModel\PaneViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -127,7 +133,6 @@
   <ItemGroup>
     <Folder Include="Converter\" />
     <Folder Include="Image\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Themes\" />
   </ItemGroup>
   <ItemGroup>

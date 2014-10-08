@@ -92,16 +92,20 @@
     </Compile>
     <Compile Include="Interfaces\ILayoutViewModelParent.cs" />
     <Compile Include="Interfaces\IViewModelResolver.cs" />
+    <Compile Include="ViewModel\ApplicationViewModel.cs" />
     <Compile Include="ViewModel\AvalonDockLayoutViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewViewModel.cs" />
     <Compile Include="ViewModel\GalleryItemViewModel.cs" />
     <Compile Include="ViewModel\GalleryViewModel.cs" />
+    <Compile Include="ViewModel\LibraryViewModel.cs" />
     <Compile Include="ViewModel\Notifications.cs" />
     <Compile Include="ViewModel\PaneViewModel.cs" />
     <Compile Include="ViewModel\VideoItemViewModel.cs" />
     <Compile Include="ViewModel\VideoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="ViewModel\Workspace.cs" />
+    <Compile Include="View\Library.xaml.cs">
+      <DependentUpon>Library.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -136,10 +140,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converter\" />
-    <Folder Include="Image\" />
     <Folder Include="Themes\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\Library.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +157,58 @@
       <Project>{9dbfe5af-115c-4c10-b514-2d0f1b68efeb}</Project>
       <Name>VideoSubtitleCreator.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\add.png" />
+    <Resource Include="Image\folder_add.png" />
+    <Resource Include="Image\media-pause-2x.png" />
+    <Resource Include="Image\media-pause-3x.png" />
+    <Resource Include="Image\media-pause-4x.png" />
+    <Resource Include="Image\media-pause-6x.png" />
+    <Resource Include="Image\media-pause-8x.png" />
+    <Resource Include="Image\media-pause.png" />
+    <Resource Include="Image\media-play-2x.png" />
+    <Resource Include="Image\media-play-3x.png" />
+    <Resource Include="Image\media-play-4x.png" />
+    <Resource Include="Image\media-play-6x.png" />
+    <Resource Include="Image\media-play-8x.png" />
+    <Resource Include="Image\media-play.png" />
+    <Resource Include="Image\media-record-2x.png" />
+    <Resource Include="Image\media-record-3x.png" />
+    <Resource Include="Image\media-record-4x.png" />
+    <Resource Include="Image\media-record-6x.png" />
+    <Resource Include="Image\media-record-8x.png" />
+    <Resource Include="Image\media-record.png" />
+    <Resource Include="Image\media-skip-backward-2x.png" />
+    <Resource Include="Image\media-skip-backward-3x.png" />
+    <Resource Include="Image\media-skip-backward-4x.png" />
+    <Resource Include="Image\media-skip-backward-6x.png" />
+    <Resource Include="Image\media-skip-backward-8x.png" />
+    <Resource Include="Image\media-skip-backward.png" />
+    <Resource Include="Image\media-skip-forward-2x.png" />
+    <Resource Include="Image\media-skip-forward-3x.png" />
+    <Resource Include="Image\media-skip-forward-4x.png" />
+    <Resource Include="Image\media-skip-forward-6x.png" />
+    <Resource Include="Image\media-skip-forward-8x.png" />
+    <Resource Include="Image\media-skip-forward.png" />
+    <Resource Include="Image\media-step-backward-2x.png" />
+    <Resource Include="Image\media-step-backward-3x.png" />
+    <Resource Include="Image\media-step-backward-4x.png" />
+    <Resource Include="Image\media-step-backward-6x.png" />
+    <Resource Include="Image\media-step-backward-8x.png" />
+    <Resource Include="Image\media-step-backward.png" />
+    <Resource Include="Image\media-step-forward-2x.png" />
+    <Resource Include="Image\media-step-forward-3x.png" />
+    <Resource Include="Image\media-step-forward-4x.png" />
+    <Resource Include="Image\media-step-forward-6x.png" />
+    <Resource Include="Image\media-step-forward-8x.png" />
+    <Resource Include="Image\media-step-forward.png" />
+    <Resource Include="Image\media-stop-2x.png" />
+    <Resource Include="Image\media-stop-3x.png" />
+    <Resource Include="Image\media-stop-4x.png" />
+    <Resource Include="Image\media-stop-6x.png" />
+    <Resource Include="Image\media-stop-8x.png" />
+    <Resource Include="Image\media-stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
